@@ -29,6 +29,19 @@ void main() {
     "url":"https://twitter.com/tdp_org/status/1456617587538862089"
   }
     ''';
+    var data2 = '''
+    {
+    "by":"arcanus",
+    "descendants":1,
+    "id":29151198,
+    "kids":[29152400,29151229],
+    "score":11,
+    "time":1636390235,
+    "title":"The AMD Instinct MI200 Series Accelerator",
+    "type":"story",
+    "url":"https://www.youtube.com/watch?v=Bm2r4Z7qlcs"
+  }
+    ''';
     Map<String, dynamic> json1 = jsonDecode(data);
     Map<String, dynamic> json2 = jsonDecode(data);
     expect(Story.fromJson(json1), isA<Story>());

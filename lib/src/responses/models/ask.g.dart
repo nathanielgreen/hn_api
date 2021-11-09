@@ -33,4 +33,7 @@ const _$ItemTypeEnumMap = {
   ItemType.comment: 'comment',
   ItemType.poll: 'poll',
   ItemType.pollopt: 'pollopt',
+  ItemType.job: 'job',
+  ItemType.ask: 'ask',
+  ItemType.unsupported: 'unsupported',
 };
