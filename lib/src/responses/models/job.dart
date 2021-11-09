@@ -1,32 +1,28 @@
 import 'package:json_annotation/json_annotation.dart';
 import '../responses.dart';
 
-part 'story.g.dart';
+part 'job.g.dart';
 
 @JsonSerializable(checked: true)
-class Story {
+class Job {
   final String by;
-  final int descendants;
-  final String title;
   final int id;
-  final List<int>? kids;
   final int score;
-  final ItemType type;
+  final String? text;
   @JsonKey(fromJson: ResponsesUtils.timeFromJson)
   final DateTime time;
-  final Uri url;
+  final ItemType type;
+  final String? url;
 
-  Story({
+  Job({
     required this.by,
-    required this.descendants,
-    required this.title,
     required this.id,
     required this.score,
-    required this.kids,
+    required this.text,
     required this.time,
     required this.type,
     required this.url,
   });
 
-  factory Story.fromJson(Map<String, dynamic> json) => _$StoryFromJson(json);
+  factory Job.fromJson(Map<String, dynamic> json) => _$JobFromJson(json);
 }

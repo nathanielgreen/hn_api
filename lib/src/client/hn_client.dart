@@ -7,7 +7,7 @@ class HackerNewsClient {
   final Uri endpoint = Uri.parse('https://hacker-news.firebaseio.com/v0');
   final http.Client _client = http.Client();
 
-  Future<List<Item>> getTopStories({int storyCount = 2}) async {
+  Future<List<Item>> getTopStories({int storyCount = 10}) async {
     try {
       Uri url = Uri.parse('$endpoint/topstories.json');
       http.Response res = await _client.get(url);
@@ -34,11 +34,19 @@ class HackerNewsClient {
       http.Response res = await _client.get(url);
       if (res.statusCode == 200) {
         Map<String, dynamic> json = jsonDecode(res.body);
+        print(json['type']);
         if (json['type'] == 'story') {
           return Item.story(Story.fromJson(json));
         }
-
-        throw HackerNewsClientFailure();
+        if (json['type'] == 'poll') {
+          return Item.poll(Poll.fromJson(json));
+        }
+        if (json['type'] == 'ask') {
+          return Item.ask(Ask.fromJson(json));
+        }
+        if (json['type'] == 'job') {
+          return Item.job(Job.fromJson(json));
+        }
       }
       throw HackerNewsClientFailure();
     } catch (e) {

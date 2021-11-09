@@ -23,15 +23,21 @@ class _$ItemTearOff {
     );
   }
 
-  _Poll poll(models.Poll story) {
+  _Poll poll(models.Poll poll) {
     return _Poll(
-      story,
+      poll,
     );
   }
 
-  _Ask ask(models.Ask story) {
+  _Ask ask(models.Ask ask) {
     return _Ask(
-      story,
+      ask,
+    );
+  }
+
+  _Job job(models.Job job) {
+    return _Job(
+      job,
     );
   }
 }
@@ -44,22 +50,25 @@ mixin _$Item {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(models.Story story) story,
-    required TResult Function(models.Poll story) poll,
-    required TResult Function(models.Ask story) ask,
+    required TResult Function(models.Poll poll) poll,
+    required TResult Function(models.Ask ask) ask,
+    required TResult Function(models.Job job) job,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(models.Story story)? story,
-    TResult Function(models.Poll story)? poll,
-    TResult Function(models.Ask story)? ask,
+    TResult Function(models.Poll poll)? poll,
+    TResult Function(models.Ask ask)? ask,
+    TResult Function(models.Job job)? job,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(models.Story story)? story,
-    TResult Function(models.Poll story)? poll,
-    TResult Function(models.Ask story)? ask,
+    TResult Function(models.Poll poll)? poll,
+    TResult Function(models.Ask ask)? ask,
+    TResult Function(models.Job job)? job,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -68,6 +77,7 @@ mixin _$Item {
     required TResult Function(_Story value) story,
     required TResult Function(_Poll value) poll,
     required TResult Function(_Ask value) ask,
+    required TResult Function(_Job value) job,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -75,6 +85,7 @@ mixin _$Item {
     TResult Function(_Story value)? story,
     TResult Function(_Poll value)? poll,
     TResult Function(_Ask value)? ask,
+    TResult Function(_Job value)? job,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -82,6 +93,7 @@ mixin _$Item {
     TResult Function(_Story value)? story,
     TResult Function(_Poll value)? poll,
     TResult Function(_Ask value)? ask,
+    TResult Function(_Job value)? job,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -164,8 +176,9 @@ class _$_Story implements _Story {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(models.Story story) story,
-    required TResult Function(models.Poll story) poll,
-    required TResult Function(models.Ask story) ask,
+    required TResult Function(models.Poll poll) poll,
+    required TResult Function(models.Ask ask) ask,
+    required TResult Function(models.Job job) job,
   }) {
     return story(this.story);
   }
@@ -174,8 +187,9 @@ class _$_Story implements _Story {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(models.Story story)? story,
-    TResult Function(models.Poll story)? poll,
-    TResult Function(models.Ask story)? ask,
+    TResult Function(models.Poll poll)? poll,
+    TResult Function(models.Ask ask)? ask,
+    TResult Function(models.Job job)? job,
   }) {
     return story?.call(this.story);
   }
@@ -184,8 +198,9 @@ class _$_Story implements _Story {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(models.Story story)? story,
-    TResult Function(models.Poll story)? poll,
-    TResult Function(models.Ask story)? ask,
+    TResult Function(models.Poll poll)? poll,
+    TResult Function(models.Ask ask)? ask,
+    TResult Function(models.Job job)? job,
     required TResult orElse(),
   }) {
     if (story != null) {
@@ -200,6 +215,7 @@ class _$_Story implements _Story {
     required TResult Function(_Story value) story,
     required TResult Function(_Poll value) poll,
     required TResult Function(_Ask value) ask,
+    required TResult Function(_Job value) job,
   }) {
     return story(this);
   }
@@ -210,6 +226,7 @@ class _$_Story implements _Story {
     TResult Function(_Story value)? story,
     TResult Function(_Poll value)? poll,
     TResult Function(_Ask value)? ask,
+    TResult Function(_Job value)? job,
   }) {
     return story?.call(this);
   }
@@ -220,6 +237,7 @@ class _$_Story implements _Story {
     TResult Function(_Story value)? story,
     TResult Function(_Poll value)? poll,
     TResult Function(_Ask value)? ask,
+    TResult Function(_Job value)? job,
     required TResult orElse(),
   }) {
     if (story != null) {
@@ -241,7 +259,7 @@ abstract class _Story implements Item {
 abstract class _$PollCopyWith<$Res> {
   factory _$PollCopyWith(_Poll value, $Res Function(_Poll) then) =
       __$PollCopyWithImpl<$Res>;
-  $Res call({models.Poll story});
+  $Res call({models.Poll poll});
 }
 
 /// @nodoc
@@ -255,12 +273,12 @@ class __$PollCopyWithImpl<$Res> extends _$ItemCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? story = freezed,
+    Object? poll = freezed,
   }) {
     return _then(_Poll(
-      story == freezed
-          ? _value.story
-          : story // ignore: cast_nullable_to_non_nullable
+      poll == freezed
+          ? _value.poll
+          : poll // ignore: cast_nullable_to_non_nullable
               as models.Poll,
     ));
   }
@@ -269,14 +287,14 @@ class __$PollCopyWithImpl<$Res> extends _$ItemCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_Poll implements _Poll {
-  const _$_Poll(this.story);
+  const _$_Poll(this.poll);
 
   @override
-  final models.Poll story;
+  final models.Poll poll;
 
   @override
   String toString() {
-    return 'Item.poll(story: $story)';
+    return 'Item.poll(poll: $poll)';
   }
 
   @override
@@ -284,11 +302,11 @@ class _$_Poll implements _Poll {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _Poll &&
-            (identical(other.story, story) || other.story == story));
+            (identical(other.poll, poll) || other.poll == poll));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, story);
+  int get hashCode => Object.hash(runtimeType, poll);
 
   @JsonKey(ignore: true)
   @override
@@ -299,32 +317,35 @@ class _$_Poll implements _Poll {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(models.Story story) story,
-    required TResult Function(models.Poll story) poll,
-    required TResult Function(models.Ask story) ask,
+    required TResult Function(models.Poll poll) poll,
+    required TResult Function(models.Ask ask) ask,
+    required TResult Function(models.Job job) job,
   }) {
-    return poll(this.story);
+    return poll(this.poll);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(models.Story story)? story,
-    TResult Function(models.Poll story)? poll,
-    TResult Function(models.Ask story)? ask,
+    TResult Function(models.Poll poll)? poll,
+    TResult Function(models.Ask ask)? ask,
+    TResult Function(models.Job job)? job,
   }) {
-    return poll?.call(this.story);
+    return poll?.call(this.poll);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(models.Story story)? story,
-    TResult Function(models.Poll story)? poll,
-    TResult Function(models.Ask story)? ask,
+    TResult Function(models.Poll poll)? poll,
+    TResult Function(models.Ask ask)? ask,
+    TResult Function(models.Job job)? job,
     required TResult orElse(),
   }) {
     if (poll != null) {
-      return poll(this.story);
+      return poll(this.poll);
     }
     return orElse();
   }
@@ -335,6 +356,7 @@ class _$_Poll implements _Poll {
     required TResult Function(_Story value) story,
     required TResult Function(_Poll value) poll,
     required TResult Function(_Ask value) ask,
+    required TResult Function(_Job value) job,
   }) {
     return poll(this);
   }
@@ -345,6 +367,7 @@ class _$_Poll implements _Poll {
     TResult Function(_Story value)? story,
     TResult Function(_Poll value)? poll,
     TResult Function(_Ask value)? ask,
+    TResult Function(_Job value)? job,
   }) {
     return poll?.call(this);
   }
@@ -355,6 +378,7 @@ class _$_Poll implements _Poll {
     TResult Function(_Story value)? story,
     TResult Function(_Poll value)? poll,
     TResult Function(_Ask value)? ask,
+    TResult Function(_Job value)? job,
     required TResult orElse(),
   }) {
     if (poll != null) {
@@ -365,9 +389,9 @@ class _$_Poll implements _Poll {
 }
 
 abstract class _Poll implements Item {
-  const factory _Poll(models.Poll story) = _$_Poll;
+  const factory _Poll(models.Poll poll) = _$_Poll;
 
-  models.Poll get story;
+  models.Poll get poll;
   @JsonKey(ignore: true)
   _$PollCopyWith<_Poll> get copyWith => throw _privateConstructorUsedError;
 }
@@ -376,7 +400,7 @@ abstract class _Poll implements Item {
 abstract class _$AskCopyWith<$Res> {
   factory _$AskCopyWith(_Ask value, $Res Function(_Ask) then) =
       __$AskCopyWithImpl<$Res>;
-  $Res call({models.Ask story});
+  $Res call({models.Ask ask});
 }
 
 /// @nodoc
@@ -390,12 +414,12 @@ class __$AskCopyWithImpl<$Res> extends _$ItemCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? story = freezed,
+    Object? ask = freezed,
   }) {
     return _then(_Ask(
-      story == freezed
-          ? _value.story
-          : story // ignore: cast_nullable_to_non_nullable
+      ask == freezed
+          ? _value.ask
+          : ask // ignore: cast_nullable_to_non_nullable
               as models.Ask,
     ));
   }
@@ -404,14 +428,14 @@ class __$AskCopyWithImpl<$Res> extends _$ItemCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_Ask implements _Ask {
-  const _$_Ask(this.story);
+  const _$_Ask(this.ask);
 
   @override
-  final models.Ask story;
+  final models.Ask ask;
 
   @override
   String toString() {
-    return 'Item.ask(story: $story)';
+    return 'Item.ask(ask: $ask)';
   }
 
   @override
@@ -419,11 +443,11 @@ class _$_Ask implements _Ask {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _Ask &&
-            (identical(other.story, story) || other.story == story));
+            (identical(other.ask, ask) || other.ask == ask));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, story);
+  int get hashCode => Object.hash(runtimeType, ask);
 
   @JsonKey(ignore: true)
   @override
@@ -434,32 +458,35 @@ class _$_Ask implements _Ask {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(models.Story story) story,
-    required TResult Function(models.Poll story) poll,
-    required TResult Function(models.Ask story) ask,
+    required TResult Function(models.Poll poll) poll,
+    required TResult Function(models.Ask ask) ask,
+    required TResult Function(models.Job job) job,
   }) {
-    return ask(this.story);
+    return ask(this.ask);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(models.Story story)? story,
-    TResult Function(models.Poll story)? poll,
-    TResult Function(models.Ask story)? ask,
+    TResult Function(models.Poll poll)? poll,
+    TResult Function(models.Ask ask)? ask,
+    TResult Function(models.Job job)? job,
   }) {
-    return ask?.call(this.story);
+    return ask?.call(this.ask);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(models.Story story)? story,
-    TResult Function(models.Poll story)? poll,
-    TResult Function(models.Ask story)? ask,
+    TResult Function(models.Poll poll)? poll,
+    TResult Function(models.Ask ask)? ask,
+    TResult Function(models.Job job)? job,
     required TResult orElse(),
   }) {
     if (ask != null) {
-      return ask(this.story);
+      return ask(this.ask);
     }
     return orElse();
   }
@@ -470,6 +497,7 @@ class _$_Ask implements _Ask {
     required TResult Function(_Story value) story,
     required TResult Function(_Poll value) poll,
     required TResult Function(_Ask value) ask,
+    required TResult Function(_Job value) job,
   }) {
     return ask(this);
   }
@@ -480,6 +508,7 @@ class _$_Ask implements _Ask {
     TResult Function(_Story value)? story,
     TResult Function(_Poll value)? poll,
     TResult Function(_Ask value)? ask,
+    TResult Function(_Job value)? job,
   }) {
     return ask?.call(this);
   }
@@ -490,6 +519,7 @@ class _$_Ask implements _Ask {
     TResult Function(_Story value)? story,
     TResult Function(_Poll value)? poll,
     TResult Function(_Ask value)? ask,
+    TResult Function(_Job value)? job,
     required TResult orElse(),
   }) {
     if (ask != null) {
@@ -500,9 +530,150 @@ class _$_Ask implements _Ask {
 }
 
 abstract class _Ask implements Item {
-  const factory _Ask(models.Ask story) = _$_Ask;
+  const factory _Ask(models.Ask ask) = _$_Ask;
 
-  models.Ask get story;
+  models.Ask get ask;
   @JsonKey(ignore: true)
   _$AskCopyWith<_Ask> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$JobCopyWith<$Res> {
+  factory _$JobCopyWith(_Job value, $Res Function(_Job) then) =
+      __$JobCopyWithImpl<$Res>;
+  $Res call({models.Job job});
+}
+
+/// @nodoc
+class __$JobCopyWithImpl<$Res> extends _$ItemCopyWithImpl<$Res>
+    implements _$JobCopyWith<$Res> {
+  __$JobCopyWithImpl(_Job _value, $Res Function(_Job) _then)
+      : super(_value, (v) => _then(v as _Job));
+
+  @override
+  _Job get _value => super._value as _Job;
+
+  @override
+  $Res call({
+    Object? job = freezed,
+  }) {
+    return _then(_Job(
+      job == freezed
+          ? _value.job
+          : job // ignore: cast_nullable_to_non_nullable
+              as models.Job,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_Job implements _Job {
+  const _$_Job(this.job);
+
+  @override
+  final models.Job job;
+
+  @override
+  String toString() {
+    return 'Item.job(job: $job)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _Job &&
+            (identical(other.job, job) || other.job == job));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, job);
+
+  @JsonKey(ignore: true)
+  @override
+  _$JobCopyWith<_Job> get copyWith =>
+      __$JobCopyWithImpl<_Job>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(models.Story story) story,
+    required TResult Function(models.Poll poll) poll,
+    required TResult Function(models.Ask ask) ask,
+    required TResult Function(models.Job job) job,
+  }) {
+    return job(this.job);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(models.Story story)? story,
+    TResult Function(models.Poll poll)? poll,
+    TResult Function(models.Ask ask)? ask,
+    TResult Function(models.Job job)? job,
+  }) {
+    return job?.call(this.job);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(models.Story story)? story,
+    TResult Function(models.Poll poll)? poll,
+    TResult Function(models.Ask ask)? ask,
+    TResult Function(models.Job job)? job,
+    required TResult orElse(),
+  }) {
+    if (job != null) {
+      return job(this.job);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Story value) story,
+    required TResult Function(_Poll value) poll,
+    required TResult Function(_Ask value) ask,
+    required TResult Function(_Job value) job,
+  }) {
+    return job(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Story value)? story,
+    TResult Function(_Poll value)? poll,
+    TResult Function(_Ask value)? ask,
+    TResult Function(_Job value)? job,
+  }) {
+    return job?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Story value)? story,
+    TResult Function(_Poll value)? poll,
+    TResult Function(_Ask value)? ask,
+    TResult Function(_Job value)? job,
+    required TResult orElse(),
+  }) {
+    if (job != null) {
+      return job(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Job implements Item {
+  const factory _Job(models.Job job) = _$_Job;
+
+  models.Job get job;
+  @JsonKey(ignore: true)
+  _$JobCopyWith<_Job> get copyWith => throw _privateConstructorUsedError;
 }
