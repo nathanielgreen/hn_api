@@ -1,6 +1,7 @@
 name: hn_api
 description: Hacker News API Dart client
 version: 0.0.1
+repository: https://github.com/nathanielgreen/hn_api
 # homepage: https://www.example.com
 
 environment:
