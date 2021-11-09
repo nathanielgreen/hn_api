@@ -3,11 +3,12 @@ import '../responses.dart';
 
 part 'ask.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(checked: true)
 class Ask {
   final String by;
   final int descendants;
   final int id;
+  final int score;
   final List<int> kids;
   final String text;
   @JsonKey(fromJson: ResponsesUtils.timeFromJson)
@@ -18,6 +19,7 @@ class Ask {
   Ask({
     required this.by,
     required this.id,
+    required this.score,
     required this.title,
     required this.kids,
     required this.descendants,
