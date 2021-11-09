@@ -3,10 +3,12 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:hn_api/responses.dart';
 
+///
 class HackerNewsClient {
   final Uri endpoint = Uri.parse('https://hacker-news.firebaseio.com/v0');
   final http.Client _client = http.Client();
 
+  /// Fetches the top 10 (by default) Hacker News Stories
   Future<List<Item>> getTopStories({int storyCount = 10}) async {
     try {
       Uri url = Uri.parse('$endpoint/topstories.json');
@@ -27,6 +29,7 @@ class HackerNewsClient {
     }
   }
 
+  /// Fetches an [Item] that could be [Story], [Poll], [Job], or [Ask]
   Future<Item> getItem(int id) async {
     try {
       Uri url = Uri.parse('$endpoint/item/$id.json');
@@ -53,6 +56,7 @@ class HackerNewsClient {
     }
   }
 
+  /// Fetches a specific [Story]
   Future<Story> getStory(int id) async {
     try {
       Uri url = Uri.parse('$endpoint/item/$id.json');
