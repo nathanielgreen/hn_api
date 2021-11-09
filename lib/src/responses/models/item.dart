@@ -1,4 +1,3 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
 import './models.dart' as models;
 
 part 'item.freezed.dart';

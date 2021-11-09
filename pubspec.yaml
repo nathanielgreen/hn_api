@@ -20,5 +20,6 @@ dev_dependencies:
 dependencies: 
   console: ^4.1.0
   freezed: ^0.15.0+1
+  freezed_annotation: ^0.15.0
   http: ^0.13.4
   json_annotation: ^4.3.0
