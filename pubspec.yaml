@@ -1,6 +1,6 @@
 name: hn_api
-description: A simple command-line application.
-version: 1.0.0
+description: Hacker News API Dart client
+version: 0.0.1
 # homepage: https://www.example.com
 
 environment:
